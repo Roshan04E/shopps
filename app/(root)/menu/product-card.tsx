@@ -43,7 +43,7 @@ export default function ProductCard({
         </div>
       </div> */}
 
-      <SmallProductCard products={product} cart={cart} />
+      <SmallProductCard product={product} cart={cart} />
     </div>
   );
 }
