@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Products" ALTER COLUMN "unitQty" SET DATA TYPE DECIMAL(5,3);
