@@ -14,7 +14,14 @@ const CreateNewProduct = async ({ params }: { params: { id: string } }) => {
 
   // 1. This "cleans" the data to match your schema exactly
   // It handles the coercion of dates/numbers and removes extra fields
-  const validatedData = UpdateProductSchema.parse(rawData);
+  const validatedData = UpdateProductSchema.parse({
+  ...rawData,
+  banner: rawData.banner ?? undefined,
+  rating: rawData.rating ?? 0,
+  numReviews: rawData.numReviews ?? 0,
+  createdAt: rawData.createdAt ?? new Date(),
+  updatedAt: rawData.updatedAt ?? new Date(),
+})
 
   return (
     <div className='py-6 min-h-screen max-w-7xl mx-auto'>

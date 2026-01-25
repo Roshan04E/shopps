@@ -32,6 +32,8 @@ function UpdateProductPage({ product }: { product: z.infer<typeof UpdateProductS
     defaultValues: product,
   })
 
+  
+
   const onSubmit: SubmitHandler<z.infer<typeof UpdateProductSchema>> = async (values) => {
     startTransition(async () => {
       const { success, message } = await updateProduct(values)

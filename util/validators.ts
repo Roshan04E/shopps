@@ -179,30 +179,56 @@ export const insertProductSchema = z.object({
 
 
 
+// export const UpdateProductSchema = z.object({
+//   id: z.string(),
+//   name: z.string().min(1, "Name is required"),
+//   slug: z.string().min(1, "Slug is required"),
+//   description: z.string().min(1, "Description is required"),
+//   brand: z.string().min(1, "Brand is required"),
+//   category: z.string().min(1, "Category is required"),
+
+//   // Use coerce to handle string inputs from the form
+//   price: z.coerce.number().min(0),
+//   unitQty: z.coerce.number().min(0),
+//   stock: z.coerce.number().int().min(0),
+
+//   images: z.array(z.string()).min(1, "At least one image is required"),
+//   banner: z.string().optional().nullable().transform(val => val ?? undefined),
+
+//   isFeatured: z.boolean().default(false),
+//   isTaxable: z.boolean().optional(),
+
+//   rating: z.coerce.number().min(0).max(5).optional(),
+//   numReviews: z.coerce.number().int().nonnegative().optional(),
+
+//   createdAt: z.coerce.date().optional(),
+//   updatedAt: z.coerce.date().optional(),
+// })
+
+
 export const UpdateProductSchema = z.object({
   id: z.string(),
-  name: z.string().min(1, "Name is required"),
-  slug: z.string().min(1, "Slug is required"),
-  description: z.string().min(1, "Description is required"),
-  brand: z.string().min(1, "Brand is required"),
-  category: z.string().min(1, "Category is required"),
+  name: z.string(),
+  slug: z.string(),
+  description: z.string(),
+  brand: z.string(),
+  category: z.string(),
 
-  // Use coerce to handle string inputs from the form
-  price: z.coerce.number().min(0),
-  unitQty: z.coerce.number().min(0),
-  stock: z.coerce.number().int().min(0),
+  price: z.number(),
+  unitQty: z.number(),
+  stock: z.number(),
 
-  images: z.array(z.string()).min(1, "At least one image is required"),
-  banner: z.string().optional().nullable(),
+  images: z.array(z.string()),
+  banner: z.string().optional(),
 
-  isFeatured: z.boolean().default(false),
+  isFeatured: z.boolean(),
   isTaxable: z.boolean().optional(),
 
-  rating: z.coerce.number().min(0).max(5).optional(),
-  numReviews: z.coerce.number().int().nonnegative().optional(),
+  rating: z.number().optional(),
+  numReviews: z.number().optional(),
 
-  createdAt: z.coerce.date().optional(),
-  updatedAt: z.coerce.date().optional(),
+  createdAt: z.date().optional(),
+  updatedAt: z.date().optional(),
 })
 
 

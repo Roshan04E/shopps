@@ -28,13 +28,10 @@ import { formatINR } from "@/util/helpers"
 import Pagination from "@/components/pagination"
 import DeleteDialogue from "@/components/shared/delete-dialogue"
 import { deleteProductById } from "@/lib/actions/action-products"
-import { Button, Button as Button2 } from "@/components/ui/button"
-import { PenLineIcon, PenSquare } from "lucide-react"
 import Link from "next/link"
 import { Product } from "@/types"
 import Image from "next/image"
 import UpdateProduct from "./update-products"
-import UpdateProductCopy from "./update-products copy"
 
 export default function AdminProductsTable({
     products,
@@ -122,7 +119,8 @@ export default function AdminProductsTable({
                                         ...product,
                                         price: Number(product.price),
                                         unitQty: Number(product.unitQty),
-                                        stock: Number(product.stock)
+                                        stock: Number(product.stock),
+                                        banner: product.banner ?? '',
                                     }} />
 
                                     

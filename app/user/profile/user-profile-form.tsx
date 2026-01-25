@@ -13,16 +13,15 @@ import { ControllerRenderProps, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import z from 'zod';
 
-function UserProfileForm() {
+function UserProfileForm({userPhone}: {userPhone: string}) {
     const { data: session, update } = useSession();
-    console.log(session); 
     
     const form = useForm<z.infer<typeof userProfileUpdateSchema>>({
         resolver: zodResolver(userProfileUpdateSchema),
         defaultValues: {
             name: session?.user?.name ?? '',
             email: session?.user?.email ?? '',
-            phone: session?.user?.phone ?? ''
+            phone: userPhone ?? ''
         }
     }) // form
 
@@ -34,10 +33,10 @@ function UserProfileForm() {
             form.reset({
             name: session.user.name ?? '',
             email: session.user.email ?? '',
-            phone: session.user.phone ?? ''
+            phone: userPhone ?? ''
             })
         }
-        }, [session])
+        }, [session, form, userPhone])
 
 
     const onSubmit = async (values: z.infer<typeof userProfileUpdateSchema>) => {

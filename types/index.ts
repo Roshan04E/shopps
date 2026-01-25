@@ -63,9 +63,9 @@ export interface ServerProductProps {
 
 export type Product = z.infer<typeof insertProductSchema> & {
   id: string;
-  rating: number;
-  numReviews: number;
-  createdAt: Date;
+  rating?: number;
+  numReviews?: number;
+  createdAt?: Date;
 }
 
 

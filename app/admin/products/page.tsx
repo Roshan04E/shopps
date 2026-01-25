@@ -2,7 +2,6 @@
 
 import React from 'react'
 import AdminProductsTable from './admin-products-table';
-import { Product } from '@/types';
 import { getAllProducts } from '@/lib/actions/action-products';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';

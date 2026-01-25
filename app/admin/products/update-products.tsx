@@ -34,7 +34,13 @@ import { z } from 'zod'
 import Image from 'next/image'
 import { Switch } from '@/components/ui/switch'
 
-function UpdateProduct({ product }: { product: Product }) {
+type ProductWithExtras = Product & {
+    isTaxable?: boolean
+    updatedAt?: Date
+}
+
+
+function UpdateProduct({ product }: { product: ProductWithExtras }) {
     const [isPending, startTransition] = useTransition()
 
     const form = useForm<z.infer<typeof UpdateProductSchema>>({
@@ -42,7 +48,12 @@ function UpdateProduct({ product }: { product: Product }) {
         defaultValues: {
             ...product,
             banner: product.banner ?? '',
-        },
+            rating: product.rating ?? 0,
+            numReviews: product.numReviews ?? 0,
+            isTaxable: product.isTaxable ?? false,
+            createdAt: product.createdAt ?? new Date(),
+            updatedAt: product.updatedAt ?? new Date(),
+        } as z.infer<typeof UpdateProductSchema>,
     })
 
     const onSubmit: SubmitHandler<z.infer<typeof UpdateProductSchema>> = async (values) => {
