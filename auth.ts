@@ -6,7 +6,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compareSync } from "bcrypt-ts-edge";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { mergeCartOnLogin } from "./lib/actions/action-cart";
 
 export const config = {
   pages: {
@@ -40,7 +39,7 @@ export const config = {
 
         const isMatch = compareSync(
           credentials.password as string,
-          user.password
+          user.password,
         );
 
         if (!isMatch) return null;
@@ -71,8 +70,7 @@ export const config = {
       return session;
     },
 
-    async jwt({ token, user, trigger }: any) {
-
+    async jwt({ token, user, trigger, session }: any) {
       // LOGIN
       if (user) {
         token.id = user.id;
@@ -81,7 +79,27 @@ export const config = {
         token.phone = user.phone ?? "";
 
         // 🔥 merge guest cart
-        await mergeCartOnLogin()
+        if (trigger === "signIn" || trigger === "signUp") {
+          const cookiesObject = await cookies();
+          const sessionCartId = cookiesObject.get("sessionCartId")?.value;
+          if (sessionCartId) {
+            const sessionCart = await prisma.cart.findFirst({
+              where: { sessionCartId: sessionCartId },
+            });
+            if (sessionCart) {
+              // delete current user cart
+              await prisma.cart.deleteMany({
+                where: { userId: user.id },
+              });
+
+              // merge guest cart into user cart
+              await prisma.cart.update({
+                where: { id: sessionCart.id },
+                data: { userId: user.id },
+              });
+            }
+          }
+        }
       }
 
       // PROFILE UPDATE
@@ -124,11 +142,8 @@ export const config = {
       }
 
       if (pathname.startsWith("/admin") && auth?.user?.role !== "admin") {
-        return NextResponse.redirect(
-          new URL("/unauthorized", request.url)
-        );
+        return NextResponse.redirect(new URL("/unauthorized", request.url));
       }
-
 
       if (!request.cookies.get("sessionCartId")) {
         const sessionCartId = crypto.randomUUID();
