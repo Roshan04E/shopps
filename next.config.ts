@@ -5,23 +5,29 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'images.pexels.com',
-        port: '',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "images.pexels.com",
+        port: "",
+        pathname: "/**",
       },
-      
+
       {
-        protocol: 'https',
-        hostname: 'bhjcusmocaiodwjaqjrs.supabase.co',
-        port: '',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "bhjcusmocaiodwjaqjrs.supabase.co",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com", // YouTube thumbnails
+        port: "",
+        pathname: "/vi/**",
       },
     ],
   },
