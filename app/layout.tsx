@@ -15,6 +15,18 @@ export const metadata: Metadata = {
     default: "Shopps",
   },
   description: "Shopps – fresh vegetables delivered daily from local farms.",
+  icons: {
+    icon: [
+      {
+        url: "/icon-light.ico",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark.ico",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
