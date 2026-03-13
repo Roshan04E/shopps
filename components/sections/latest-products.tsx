@@ -23,7 +23,7 @@ function LatestProducts({ cart }: { cart: cart }) {
     const loadProducts = async () => {
       try {
         const products = await fetchLatestProducts();
-        const featured = await fetchProductBySlug("grey-oyester-mushrooms");
+        const featured = await fetchProductBySlug("fresh-potato");
         setLatestProducts(products);
         setFeaturedProduct(featured ?? null);
       } catch (err) {
