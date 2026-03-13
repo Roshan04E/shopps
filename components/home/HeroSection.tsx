@@ -150,7 +150,7 @@ export default function HeroSection() {
             <div className="absolute -inset-1 bg-gradient-to-br from-[#7fb069] to-[#a8b5a0] rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10 hidden md:block"></div>
 
             <Image
-              src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&w=1000&auto=format&fit=crop"
+              src="https://res.cloudinary.com/dqzxgnqjd/image/upload/v1773386384/banner_has8lr.png"
               alt="Healthy food"
               fill
               className="object-cover w-full h-full md:hover:scale-105 transition-transform duration-700 rounded-3xl"
