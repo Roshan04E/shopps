@@ -1,49 +1,63 @@
-# Roshan Kumar
+# Shopps
 
-Full-Stack Developer based in Noida, Delhi NCR.  
-Background in forensic science — so I think about systems from a *"how does this break"* perspective.  
-Currently open to work and available to join immediately.
+Fresh grocery delivery app — order farm-fresh vegetables and get them delivered in your chosen time slot.
 
----
-
-### Things I've built
-
-**[AppBook](https://github.com/Roshan04E/appbook)** &nbsp;·&nbsp; [live →](https://appbookpro-rose.vercel.app/)
-
-A MacOS-style desktop that runs entirely in the browser. I built the window manager from scratch — draggable windows, minimize, resize, a working dock, and modular apps inside it. Probably the most complex UI thing I've made. Built in TypeScript.
+**[Live Demo →](https://shoppsgo.vercel.app/)**
 
 ---
 
-**[AI Ransomware Detector](https://github.com/Roshan04E/AI-Ransomware-detector)**
+### What it does
 
-Upload a file, find out if it's ransomware. Uses a Random Forest model I trained on real malware feature datasets, combined with VirusTotal's API for hash-based scanning. Flask web UI, async scanning, clean verdict report. This one came from my forensic science + cybersecurity background — it felt like a natural thing to build.
+You browse products, add them to cart, pick a delivery time slot, and check out. There's a full role-based system under the hood — customers get a clean order dashboard, admins get a separate panel to manage products, orders, and users. Built it to feel like something you'd actually ship, not just a portfolio piece.
 
 ---
 
-**[Shopps](https://github.com/Roshan04E/shopps)** &nbsp;·&nbsp; [live →](https://shoppsgo.vercel.app/)
+### Features
 
-A grocery delivery app. Browse, add to cart, checkout — the full flow. Built it to get comfortable with full-stack product thinking, not just isolated features.
+- **Auth & RBAC** — register, log in, role-based access (admin vs customer) via Auth.js
+- **Customer dashboard** — order history, track current orders, manage account
+- **Admin dashboard** — manage products, view all orders, handle users
+- **Product listing & search** — browse and filter fresh produce
+- **Cart & checkout** — full cart flow with order summary
+- **Custom delivery time slots** — pick when you want your order delivered
+- **Clean UI** — simple, fast, easy to use
 
 ---
 
 ### Stack
 
-TypeScript · Python · JavaScript · HTML · CSS · Flask · React  
-Scikit-learn · Random Forest · VirusTotal API · Git
+- **Next.js** (App Router) + **TypeScript**
+- **Prisma** ORM + **PostgreSQL**
+- **Auth.js** for authentication & role management
+- **Tailwind CSS** + shadcn/ui
+- Deployed on **Vercel**
 
 ---
 
-### Background
+### Run locally
 
-BSc Forensic Science · MSc Cybersecurity (Sem 1) · self-taught everything else
+```bash
+git clone https://github.com/Roshan04E/shopps
+cd shopps
+npm install
+```
+
+Set up your `.env`:
+
+```env
+DATABASE_URL=your_postgresql_url
+AUTH_SECRET=your_auth_secret
+```
+
+```bash
+npx prisma migrate dev
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
-### Connect
+### Author
 
-[LinkedIn](https://www.linkedin.com/in/roshan-kumar-9909041a5) &nbsp;·&nbsp; [9696roshankumar@gmail.com](mailto:9696roshankumar@gmail.com)
-
----
-
-![Roshan's GitHub stats](https://github-readme-stats.vercel.app/api?username=Roshan04E&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Roshan04E&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000)
+**Roshan Kumar** · [LinkedIn](https://www.linkedin.com/in/roshan-kumar-9909041a5) · [9696roshankumar@gmail.com](mailto:9696roshankumar@gmail.com)
