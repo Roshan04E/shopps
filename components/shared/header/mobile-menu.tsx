@@ -71,7 +71,7 @@ export default function MobileMenu({
           {navLinks.map((item) => (
             <a
               key={item.menu}
-              href={`#${item.link.toLowerCase().replace(" ", "-")}`}
+              href={`${item.link.toLowerCase().replace(" ", "-")}`}
               onClick={() => setOpen(false)}
               className="
                 text-lg font-semibold text-[#5a6b5a]
