@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Roshan Kumar
 
-## Getting Started
+Full-Stack Developer based in Noida, Delhi NCR.  
+Background in forensic science — so I think about systems from a *"how does this break"* perspective.  
+Currently open to work and available to join immediately.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Things I've built
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**[AppBook](https://github.com/Roshan04E/appbook)** &nbsp;·&nbsp; [live →](https://appbookpro-rose.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+A MacOS-style desktop that runs entirely in the browser. I built the window manager from scratch — draggable windows, minimize, resize, a working dock, and modular apps inside it. Probably the most complex UI thing I've made. Built in TypeScript.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+**[AI Ransomware Detector](https://github.com/Roshan04E/AI-Ransomware-detector)**
 
-To learn more about Next.js, take a look at the following resources:
+Upload a file, find out if it's ransomware. Uses a Random Forest model I trained on real malware feature datasets, combined with VirusTotal's API for hash-based scanning. Flask web UI, async scanning, clean verdict report. This one came from my forensic science + cybersecurity background — it felt like a natural thing to build.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**[Shopps](https://github.com/Roshan04E/shopps)** &nbsp;·&nbsp; [live →](https://shoppsgo.vercel.app/)
 
-## Deploy on Vercel
+A grocery delivery app. Browse, add to cart, checkout — the full flow. Built it to get comfortable with full-stack product thinking, not just isolated features.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Stack
+
+TypeScript · Python · JavaScript · HTML · CSS · Flask · React  
+Scikit-learn · Random Forest · VirusTotal API · Git
+
+---
+
+### Background
+
+BSc Forensic Science · MSc Cybersecurity (Sem 1) · self-taught everything else
+
+---
+
+### Connect
+
+[LinkedIn](https://www.linkedin.com/in/roshan-kumar-9909041a5) &nbsp;·&nbsp; [9696roshankumar@gmail.com](mailto:9696roshankumar@gmail.com)
+
+---
+
+![Roshan's GitHub stats](https://github-readme-stats.vercel.app/api?username=Roshan04E&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Roshan04E&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000)
